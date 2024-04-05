@@ -22,7 +22,7 @@ export default function DropdownRotas() {
         <DropdownItem key="new">Top</DropdownItem>
         <DropdownItem key="new">Jungle</DropdownItem>
         <DropdownItem key="new">Mid</DropdownItem>
-        <DropdownItem key="new">Bottom</DropdownItem>
+        <DropdownItem key="new">Ad Carry</DropdownItem>
         <DropdownItem key="new">Support</DropdownItem>                
       </DropdownMenu>
     </Dropdown>
