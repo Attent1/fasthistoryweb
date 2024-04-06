@@ -1,5 +1,4 @@
 import NavBar from "@/components/NavBar";
-import { Trash2, ChevronDown, Pencil } from "lucide-react";
 import { CampeaoItem } from "./CampeaoItem";
 import { Button } from "@nextui-org/button";
 

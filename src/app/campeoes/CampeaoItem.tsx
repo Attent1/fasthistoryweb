@@ -17,7 +17,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
     return(
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
-          <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center">
               <span>Rota:</span>
               <DropdownRotas />   
             </div>                 
@@ -27,7 +27,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
             </div>
             </div>
             <span>Nome: {campeao.nome}</span>
-            </div>
+         </div>
             <div className="flex gap-2 items-center">
             <Pencil />
             <Trash2 />
