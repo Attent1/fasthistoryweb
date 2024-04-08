@@ -22,16 +22,10 @@ export default function CadastrarCampeao(){
                 />
                 <Input
                     key='funcao'
-                    label='Funcao'
+                    label='Função'
                     name='funcao'
                     labelPlacement={'outside'}
-                />
-                <Input
-                    key='rota'
-                    label='Rota'
-                    name='rota'
-                    labelPlacement={'outside'}
-                />
+                />               
                 <div className='flex justify-around mt-4'>
                     <Link href={'/campeoes'}>
                         <Button variant='bordered'>Cancelar</Button>

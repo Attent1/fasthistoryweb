@@ -1,4 +1,4 @@
-import { ChevronDown, Pencil, Trash2 } from "lucide-react";
+import { ChevronDown, Pencil, Trash2, TreePine } from "lucide-react";
 import { Icon } from "@/components/Icon";
 import DropdownRotas from "@/components/DropdownRotas";
     
@@ -18,7 +18,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
             <div className="flex gap-2 items-center">
-              <span>Rota:</span>
+              {/* <span>Rota:</span> */}
               <DropdownRotas />   
             </div>                 
             <div className="flex items-center gap-2">
@@ -26,7 +26,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
                 <img src="https://i.pravatar.cc/300" alt="avatar do usuário" />
             </div>
             </div>
-            <span>Nome: {campeao.nome}</span>
+            <span className="flex gap-2">{campeao.nome}<TreePine />{campeao.funcao}</span>            
          </div>
             <div className="flex gap-2 items-center">
             <Pencil />
