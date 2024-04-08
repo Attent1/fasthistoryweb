@@ -26,7 +26,7 @@ export default function DropdownRotas() {
           className="capitalize"
         >
           {selectedValue}
-          <ChevronDown/>
+          <ChevronDown />
         </Button>
         
       </DropdownTrigger>

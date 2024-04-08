@@ -1,7 +1,7 @@
 import { ChevronDown, Pencil, Trash2 } from "lucide-react";
 import { Icon } from "@/components/Icon";
 import DropdownRotas from "@/components/DropdownRotas";
-
+    
 type CampeaoItemProps = {
     campeao : {
         id: number,
