@@ -47,8 +47,8 @@ export function CampeaoItem(props:CampeaoItemProps) {
             </div>   
          </div>
             <div className="flex gap-4 items-center">
-              <Link href="/campeoes/edit">
-                <Pencil className="ml-2" color="white"/>
+              <Link href={`/campeoes/edit?" + ${campeao}`}>
+                <Pencil  className="ml-2" color="white"/>
               </Link>
               <Link>
                 <Trash2 onClick={() => handleDelete()} color="red"/> 
