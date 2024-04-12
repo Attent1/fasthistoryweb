@@ -2,7 +2,9 @@
 import { Pencil, Trash2 } from "lucide-react";
 import DropdownRotas from "@/components/DropdownRotas";
 import { Button, Link } from "@nextui-org/react";
-import deleteCampeao from "../actions/campeoes/delete";
+import deleteCampeao from "../actions/campeoes/deleteCampeao";
+import { toast } from "react-hot-toast";
+import EditarCampeao from "./edit/page";
     
 type CampeaoItemProps = {
     campeao : {
@@ -14,6 +16,17 @@ type CampeaoItemProps = {
 }
 
 export function CampeaoItem(props:CampeaoItemProps) {
+  const handleDelete = () =>{    
+    toast.promise(
+      deleteCampeao(campeao.id),
+       {
+         loading: 'Apagando...',
+         success: "Apagado com sucesso",
+         error: "Erro ao apagar",
+       }
+     );
+  }
+
     const {campeao} =  props;
 
     return(
@@ -36,8 +49,11 @@ export function CampeaoItem(props:CampeaoItemProps) {
             <div className="flex gap-4 items-center">
               <Link href="/campeoes/edit">
                 <Pencil className="ml-2" color="white"/>
+              </Link>
+              <Link>
+                <Trash2 onClick={() => handleDelete()} color="red"/> 
               </Link>                        
-            <Trash2 onClick={() => deleteCampeao(campeao.id)} color="red"/>   
+            
           </div>
         </div>
     )
