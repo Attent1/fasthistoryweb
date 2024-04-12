@@ -12,7 +12,7 @@ export default function CadastrarCampeao(){
             <NavBar active='campeoes'/>
 
             <form action={create} className='flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]'>
-                <h2 className='text-2xl font-bold'>Novo Campeão</h2>
+                <h2 className='text-2xl font-bold'>Alterar Campeão</h2>
                 <Input
                     key='nome'
                     label='Nome'

@@ -1,6 +1,8 @@
-import { ChevronDown, Pencil, Trash2, TreePine } from "lucide-react";
-import { Icon } from "@/components/Icon";
+'use client'
+import { Pencil, Trash2 } from "lucide-react";
 import DropdownRotas from "@/components/DropdownRotas";
+import { Button, Link } from "@nextui-org/react";
+import deleteCampeao from "../actions/campeoes/delete";
     
 type CampeaoItemProps = {
     campeao : {
@@ -18,7 +20,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
             <div className="flex gap-2 items-center">
-              {/* <span>Rota:</span> */}
+              <span>Rota:</span>
               <DropdownRotas />   
             </div>                 
             <div className="flex items-center gap-2">
@@ -26,11 +28,16 @@ export function CampeaoItem(props:CampeaoItemProps) {
                 <img src="https://i.pravatar.cc/300" alt="avatar do usuário" />
             </div>
             </div>
-            <span className="flex gap-2">{campeao.nome}<TreePine />{campeao.funcao}</span>            
+            <div className="flex gap-5">
+              <span>Nome: {campeao.nome}</span>            
+              <span>Função: {campeao.funcao}</span>         
+            </div>   
          </div>
-            <div className="flex gap-2 items-center">
-            <Pencil />
-            <Trash2 />
+            <div className="flex gap-4 items-center">
+              <Link href="/campeoes/edit">
+                <Pencil className="ml-2" color="white"/>
+              </Link>                        
+            <Trash2 onClick={() => deleteCampeao(campeao.id)} color="red"/>   
           </div>
         </div>
     )
