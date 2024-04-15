@@ -7,14 +7,7 @@ import { Autocomplete, AutocompleteItem, Input } from '@nextui-org/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useFormState } from "react-dom";
-
-const rotas = [
-    {nome: "Top"},
-    {nome: "Jungle"},
-    {nome: "Mid"},
-    {nome: "Ad Carry"},
-    {nome: "Support"}
-]
+import rotas from '@/app/utils/Rotas';
 
 const initialState = {
     message: '',
@@ -32,14 +25,14 @@ export default function EditForm(campeao: Campeao) {
 
             <form action={formAction} className='flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]'>
                 <h2 className='text-2xl font-bold'>Editar Campeão </h2>
-                {/* <DropdownRotas/> */}
                 <input type='hidden' name='id' value={campeao.id} className=''></input>
                 <Autocomplete
                     label='Rota'
                     name='rota'
-                    className="max-w-xs"
-                    value={campeao.rota}
-                    onValueChange={setRota} 
+                    labelPlacement={'outside'}
+                    className="w-36"
+                    inputValue={rota}
+                    onInputChange={setRota} 
                 >
                     {rotas.map((rotas) => (
                         <AutocompleteItem key={rotas.nome} value={rotas.nome}>

@@ -4,7 +4,6 @@ import DropdownRotas from "@/components/DropdownRotas";
 import { Button, Link } from "@nextui-org/react";
 import deleteCampeao from "../actions/campeoes/deleteCampeao";
 import { toast } from "react-hot-toast";
-import EditarCampeao from "./edit/page";
 import { useRouter } from "next/navigation";
     
 type CampeaoItemProps = {
@@ -30,8 +29,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
             <div className="flex gap-2 items-center">
-              <span>Rota: {campeao.rota}</span>
-              {/* <DropdownRotas />    */}
+              <span>Rota: {campeao.rota}</span>              
             </div>                 
             <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full overflow-hidden">

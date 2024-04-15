@@ -5,3 +5,4 @@ const rotas = [
     {nome: "Ad Carry"},
     {nome: "Support"}
 ]
+export default rotas;

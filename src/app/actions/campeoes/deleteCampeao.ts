@@ -2,7 +2,7 @@
 import { redirect } from "next/navigation";
 
 const deleteCampeao = async (idCampeao: number) =>{
-    await new Promise(r => setTimeout(r, 5000));    
+    await new Promise(r => setTimeout(r, 2000));    
 
     const options = {
         method: 'DELETE'                

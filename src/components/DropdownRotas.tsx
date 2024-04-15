@@ -33,8 +33,7 @@ export default function DropdownRotas() {
       <DropdownMenu 
        aria-label="Action event example"               
        selectionMode="single"
-       selectedKeys={selectedKeys}
-       onSelectionChange={setSelectedKeys}
+       selectedKeys={selectedKeys}       
       >
         <DropdownItem key="top">Top</DropdownItem>
         <DropdownItem key="jungle">Jungle</DropdownItem>
