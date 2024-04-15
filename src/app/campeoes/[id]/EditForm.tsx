@@ -1,16 +1,12 @@
 "use client"
-import create from '@/app/actions/campeoes/create';
-import DropdownRotas from '@/components/DropdownRotas';
-import NavBar from '@/components/NavBar';
+
+import { update } from '@/app/actions/campeoes/update';
 import SubmitButton from '@/components/SubmitButton';
 import { Button } from '@nextui-org/button';
 import { Autocomplete, AutocompleteItem, Input } from '@nextui-org/react';
 import Link from 'next/link';
-import { useFormState } from 'react-dom';
-
-const initialState = {
-    message: '',
-}
+import { useState } from 'react';
+import { useFormState } from "react-dom";
 
 const rotas = [
     {nome: "Top"},
@@ -20,28 +16,37 @@ const rotas = [
     {nome: "Support"}
 ]
 
-export default function CadastrarCampeao() {
+const initialState = {
+    message: '',
+}
 
-    const [state, formAction] = useFormState(create, initialState);
+export default function EditForm(campeao: Campeao) {
+
+    const [state, formAction] = useFormState(update, initialState);
+    const [nome, setNome] = useState(campeao.nome);
+    const [funcao, setFuncao] = useState(campeao.funcao);
+    const [rota, setRota] = useState(campeao.rota);
 
     return (
         <main className='flex min-h-screen flex-col items-center'>
-            <NavBar active='campeoes' />
 
             <form action={formAction} className='flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]'>
-                <h2 className='text-2xl font-bold'>Novo Campeão</h2>
+                <h2 className='text-2xl font-bold'>Editar Campeão </h2>
                 {/* <DropdownRotas/> */}
+                <input type='hidden' name='id' value={campeao.id} className=''></input>
                 <Autocomplete
-                    label="Rota"
+                    label='Rota'
+                    name='rota'
                     className="max-w-xs"
-                    
+                    value={campeao.rota}
+                    onValueChange={setRota} 
                 >
                     {rotas.map((rotas) => (
                         <AutocompleteItem key={rotas.nome} value={rotas.nome}>
                             {rotas.nome}
                         </AutocompleteItem>
                     ))}
-                </Autocomplete>                
+                </Autocomplete>
                 <Input
                     key='nome'
                     label='Nome'
@@ -49,12 +54,16 @@ export default function CadastrarCampeao() {
                     labelPlacement={'outside'}
                     isInvalid={state?.message != ''}
                     errorMessage={state?.message}
+                    onValueChange={setNome}
+                    value={nome}
                 />
                 <Input
                     key='funcao'
                     label='Função'
                     name='funcao'
                     labelPlacement={'outside'}
+                    onValueChange={setFuncao}
+                    value={funcao}
                 />
                 <div className='flex justify-around mt-4'>
                     <Link href={'/campeoes'}>
@@ -65,5 +74,4 @@ export default function CadastrarCampeao() {
             </form>
         </main>
     )
-
 }
