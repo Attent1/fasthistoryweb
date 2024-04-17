@@ -4,3 +4,13 @@ interface Campeao {
     nome: string,
     funcao: string
 }
+type Partida = {
+    id: number,
+    idCampeao: number,
+    kill:number,
+    death:number,
+    assist:number,
+    kda:number,
+    resultado: string,
+    nomeCampeao: string
+}

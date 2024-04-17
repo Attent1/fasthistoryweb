@@ -1,7 +1,6 @@
 'use client'
 import { Pencil, Trash2 } from "lucide-react";
-import DropdownRotas from "@/components/DropdownRotas";
-import { Button, Link } from "@nextui-org/react";
+import {  Link } from "@nextui-org/react";
 import deleteCampeao from "../actions/campeoes/deleteCampeao";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
