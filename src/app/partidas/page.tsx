@@ -4,20 +4,11 @@ import { Plus } from "lucide-react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { PartidaItem } from "./PartidaItem";
-import getNomeCampeao from "../actions/campeoes/getNomeCampeao";
 
 export default async function Partidas() {
   
-  debugger;
   const partidas: Partida[] = await getPartidas();
-  let nomeCampeao: string = '';
   
-  partidas.forEach(async partida => {
-    nomeCampeao = await getNomeCampeao(partida.idCampeao);
-    console.log(nomeCampeao);
-    partida.nomeCampeao = nomeCampeao;
-  });
-
   return (
     <main className="flex min-h-screen flex-col items-center">
       <NavBar active="partidas" />
