@@ -22,9 +22,11 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                 <h2 className='text-2xl font-bold'>Nova Partida</h2>
                 <Autocomplete
                     label='Campeão'
-                    name='idCampeao'
+                    name='nomeCampeao'
                     labelPlacement={'outside'}
-                    className="w-36"                    
+                    className="w-36"
+                    isInvalid={state?.message != ''}
+                    errorMessage={state?.message}           
                 >
                     {campeoes.map((campeoes) => (
                         <AutocompleteItem key={campeoes.id} value={campeoes.nome}>
@@ -44,17 +46,6 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                     min='0'
                 /> 
                 <Input
-                    key='assist'
-                    label='Assist'
-                    name='assist'
-                    className="w-64"
-                    labelPlacement={'outside'}
-                    isInvalid={state?.message != ''}
-                    errorMessage={state?.message}
-                    type='number'
-                    min='0'
-                />
-                <Input
                     key='death'
                     label='Death'
                     name='death'
@@ -65,6 +56,17 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                     type='number'
                     min='0'
                 /> 
+                <Input
+                    key='assist'
+                    label='Assist'
+                    name='assist'
+                    className="w-64"
+                    labelPlacement={'outside'}
+                    isInvalid={state?.message != ''}
+                    errorMessage={state?.message}
+                    type='number'
+                    min='0'
+                />                
                 <Autocomplete
                     label='Resultado'
                     name='resultado'
