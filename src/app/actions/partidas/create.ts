@@ -1,10 +1,23 @@
 'use server'
 import { redirect } from "next/navigation";
 import getIdCampeao from "../campeoes/getIdCampeao";
+import consistir from "../consistir";
 
 const create = async (prevState: any, formData: FormData) =>{
     await new Promise(r => setTimeout(r, 1000));
-    const lintIdCampeao = await getIdCampeao(formData.get('idCampeao')?.toString());
+    
+    debugger;
+    const messageConsistencia = consistir(prevState, formData);
+    if (messageConsistencia != null) {
+        return messageConsistencia;
+    }
+
+    if (formData.get('nomeCampeao')?.toString() == '') {
+        return  {
+            message: "Selecione um campeão"
+        }
+    }
+    const lintIdCampeao = await getIdCampeao(formData.get('nomeCampeao')?.toString());
         
     const data = {
         idCampeao: lintIdCampeao, 
