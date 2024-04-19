@@ -5,12 +5,11 @@ interface Campeao {
     funcao: string
 }
 type Partida = {
-    id: number,
-    idCampeao: number,
+    id: number,    
     kill:number,
     death:number,
     assist:number,
     kda:number,
     resultado: string,
-    nomeCampeao: string
+    campeao: Campeao
 }
