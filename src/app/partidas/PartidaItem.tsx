@@ -4,7 +4,6 @@ import {  Link } from "@nextui-org/react";
 // import deletePartida from "../actions/partidas/deletePartida";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import getById from "../actions/campeoes/getById";
     
 type PartidaItemProps = {
     partida: Partida,
@@ -22,7 +21,7 @@ export async function PartidaItem(props:PartidaItemProps) {
 //        }
 //      );
 //   }
-    debugger;
+
     const {partida} = props;
     const router = useRouter();
 
@@ -41,8 +40,8 @@ export async function PartidaItem(props:PartidaItemProps) {
             </div>   
          </div>
             <div className="flex gap-4 items-center">
-              <Link>
-                <Pencil  onClick={() => router.push(`/partidas/${partida.id}`)} className="ml-2" color="white"/>
+              <Link >
+                <Pencil  onClick={() => router.push(`/partidas/new`)} className="ml-2" color="white"/>
               </Link>
               <Link>
                 {/* <Trash2 onClick={() => handleDelete()} color="red"/>  */}
