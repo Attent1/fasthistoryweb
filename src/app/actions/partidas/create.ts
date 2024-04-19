@@ -19,12 +19,14 @@ const create = async (prevState: any, formData: FormData) =>{
     }
     const lintIdCampeao = await getIdCampeao(formData.get('nomeCampeao')?.toString());
         
-    const data = {
-        idCampeao: lintIdCampeao, 
+    const data = {        
         kill: formData.get('kill'),
         death: formData.get('death'),
         assist: formData.get('assist'),
         resultado: formData.get('resultado'),
+        campeao: {
+            id:formData.get('idCampeao')
+        }
     }
 
     const options = {

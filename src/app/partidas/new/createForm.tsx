@@ -22,14 +22,14 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                 <h2 className='text-2xl font-bold'>Nova Partida</h2>
                 <Autocomplete
                     label='Campeão'
-                    name='nomeCampeao'
+                    name='idCampeao'
                     labelPlacement={'outside'}
                     className="w-36"
                     isInvalid={state?.message != ''}
                     errorMessage={state?.message}           
                 >
                     {campeoes.map((campeoes) => (
-                        <AutocompleteItem key={campeoes.id} value={campeoes.nome}>
+                        <AutocompleteItem key={campeoes.id} value={campeoes.id}>
                             {campeoes.nome}
                         </AutocompleteItem>
                     ))}
