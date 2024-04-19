@@ -3,13 +3,17 @@
 import create from '@/app/actions/partidas/create';
 import SubmitButton from '@/components/SubmitButton';
 import { Button } from '@nextui-org/button';
-import { Autocomplete, AutocompleteItem, Input } from '@nextui-org/react';
+import { Autocomplete, AutocompleteItem, Input, Select, SelectItem } from '@nextui-org/react';
 import Link from 'next/link';
 import { useFormState } from 'react-dom';
 import resultados from '@/app/utils/Resultados';
 
 const initialState = {
-    message: ''
+    messageCampeao: '',
+    messageKill: '',
+    messageDeath: '',
+    messageAssist: '',
+    messageResultado: '',
 }
 
 export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) {
@@ -20,28 +24,28 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
         <main className='flex min-h-screen flex-col items-center'>
             <form action={formAction} className='flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]'>
                 <h2 className='text-2xl font-bold'>Nova Partida</h2>
-                <Autocomplete
+                <Select
                     label='Campeão'
-                    name='idCampeao'
+                    name='campeao'
                     labelPlacement={'outside'}
                     className="w-36"
-                    isInvalid={state?.message != ''}
-                    errorMessage={state?.message}           
+                    isInvalid={state?.messageCampeao != ''}
+                    errorMessage={state?.messageCampeao}           
                 >
                     {campeoes.map((campeoes) => (
-                        <AutocompleteItem key={campeoes.id} value={campeoes.id}>
+                        <SelectItem  key={campeoes.id} value={campeoes.id}>
                             {campeoes.nome}
-                        </AutocompleteItem>
+                        </SelectItem >
                     ))}
-                </Autocomplete>
+                </Select>
                 <Input
                     key='kill'
                     label='Kill'
                     name='kill'
                     className="w-64"
                     labelPlacement={'outside'}
-                    isInvalid={state?.message != ''}
-                    errorMessage={state?.message}
+                    isInvalid={state?.messageKill != ''}
+                    errorMessage={state?.messageKill}
                     type='number'
                     min='0'
                 /> 
@@ -51,8 +55,8 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                     name='death'
                     className="w-64"
                     labelPlacement={'outside'}
-                    isInvalid={state?.message != ''}
-                    errorMessage={state?.message}
+                    isInvalid={state?.messageDeath != ''}
+                    errorMessage={state?.messageDeath}
                     type='number'
                     min='0'
                 /> 
@@ -62,8 +66,8 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                     name='assist'
                     className="w-64"
                     labelPlacement={'outside'}
-                    isInvalid={state?.message != ''}
-                    errorMessage={state?.message}
+                    isInvalid={state?.messageAssist != ''}
+                    errorMessage={state?.messageAssist}
                     type='number'
                     min='0'
                 />                
@@ -72,6 +76,8 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
                     name='resultado'
                     labelPlacement={'outside'}
                     className="w-40"
+                    isInvalid={state?.messageResultado != ''}
+                    errorMessage={state?.messageResultado}                             
                 >
                     {resultados.map((resultados) => (
                         <AutocompleteItem key={resultados.nome} value={resultados.nome}>
