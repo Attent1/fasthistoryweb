@@ -41,7 +41,7 @@ export async function PartidaItem(props:PartidaItemProps) {
          </div>
             <div className="flex gap-4 items-center">
               <Link >
-                <Pencil  onClick={() => router.push(`/partidas/new`)} className="ml-2" color="white"/>
+                <Pencil  onClick={() => router.push(`/partidas/${partida.id}`)} className="ml-2" color="white"/>
               </Link>
               <Link>
                 {/* <Trash2 onClick={() => handleDelete()} color="red"/>  */}
