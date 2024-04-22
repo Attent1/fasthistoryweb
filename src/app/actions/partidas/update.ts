@@ -5,7 +5,7 @@ import messages from "@/app/utils/Mensagens";
 const update = async (prevState: any, formData: FormData) =>{
     await new Promise(r => setTimeout(r, 1000));
     const id = formData.get("id");
-
+    
     const data = {        
         kill: formData.get('kill'),
         death: formData.get('death'),
