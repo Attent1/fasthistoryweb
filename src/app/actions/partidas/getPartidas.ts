@@ -2,7 +2,8 @@
 
 const getPartida = async () =>{
     const resp = await fetch(process.env.API_BASE_URL + "/partida", {next: {revalidate: 0}});
-    return await resp.json();
+    const json = await resp.json();
+    return json.content
 }
 
 export default getPartida;

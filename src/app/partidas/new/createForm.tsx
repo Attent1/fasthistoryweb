@@ -7,6 +7,7 @@ import { Autocomplete, AutocompleteItem, Input, Select, SelectItem } from '@next
 import Link from 'next/link';
 import { useFormState } from 'react-dom';
 import resultados from '@/app/utils/Resultados';
+import { CampeaoSelect } from '@/components/SelectCampeao';
 
 const initialState = {
     messageCampeao: '',
@@ -23,21 +24,8 @@ export default function CadastrarPartidaForm({campeoes}: {campeoes: Campeao[]}) 
     return (
         <main className='flex min-h-screen flex-col items-center'>
             <form action={formAction} className='flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]'>
-                <h2 className='text-2xl font-bold'>Nova Partida</h2>
-                <Select
-                    label='Campeão'
-                    name='campeao'
-                    labelPlacement={'outside'}
-                    className="w-36"
-                    isInvalid={state?.messageCampeao != ''}
-                    errorMessage={state?.messageCampeao}           
-                >
-                    {campeoes.map((campeoes) => (
-                        <SelectItem  key={campeoes.id} value={campeoes.id}>
-                            {campeoes.nome}
-                        </SelectItem >
-                    ))}
-                </Select>
+                <h2 className='text-2xl font-bold'>Nova Partida</h2>                        
+                <CampeaoSelect campeoes={campeoes}></CampeaoSelect>              
                 <Input
                     key='kill'
                     label='Kill'
