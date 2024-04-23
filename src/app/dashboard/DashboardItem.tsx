@@ -8,6 +8,7 @@ export async function DashboardItem() {
               <span>Campeão: jorge</span>    
               <span>KDA: 10 </span>    
               <span>Win Rate: </span>
+              {/* <span>KDA: {partida.kda.toPrecision(3)}</span>  */}
             </div>   
          </div>          
         </div>

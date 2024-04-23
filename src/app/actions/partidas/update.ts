@@ -11,6 +11,7 @@ const update = async (prevState: any, formData: FormData) =>{
         death: formData.get('death'),
         assist: formData.get('assist'),
         resultado: formData.get('resultado'),
+        dataInclusao: formData.get('dataInclusao'),
         campeao: {
             id:formData.get('campeao')
         }

@@ -37,7 +37,7 @@ export async function PartidaItem(props:PartidaItemProps) {
               <span>Kills: {partida.kill}</span>            
               <span>Deaths: {partida.death}</span>         
               <span>Assists: {partida.assist}</span>    
-              <span>KDA: {partida.kda.toPrecision(3)}</span>    
+              <span>Inclusão: {partida.dataInclusao}</span>    
               <span>Resultado: {partida.resultado}</span>
             </div>   
          </div>

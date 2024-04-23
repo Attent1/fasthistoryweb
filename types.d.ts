@@ -11,5 +11,6 @@ type Partida = {
     assist:number,
     kda:number,
     resultado: string,
+    dataInclusao: string
     campeao: Campeao
 }

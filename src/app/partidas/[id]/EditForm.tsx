@@ -47,6 +47,7 @@ export default function EditarPartidaForm({partida, campeoes}:{ partida:Partida;
                 <h2 className='text-2xl font-bold'>Editar Partida</h2>
                 <input type='hidden' name='id' value={partida.id} className=''></input>
                 <input type="hidden" name="campeao" value={campeao.id} />
+                <input type="hidden" name="dataInclusao" value={partida.dataInclusao} /> 
                 <Autocomplete
                     label='Campeão'
                     name='campeao'
