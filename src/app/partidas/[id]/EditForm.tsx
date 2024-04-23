@@ -44,7 +44,7 @@ export default function EditarPartidaForm({partida, campeoes}:{ partida:Partida;
     return (
         <main className='flex min-h-screen flex-col items-center'>
             <form action={formAction} className='flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]'>
-                <h2 className='text-2xl font-bold'>Nova Partida</h2>
+                <h2 className='text-2xl font-bold'>Editar Partida</h2>
                 <input type='hidden' name='id' value={partida.id} className=''></input>
                 <input type="hidden" name="campeao" value={campeao.id} />
                 <Autocomplete

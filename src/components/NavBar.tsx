@@ -10,7 +10,7 @@ export default function NavBar(props: NavBarProps) {
 
     return(    
         <nav className="flex w-full justify-between items-center px-4 py-2 bg-slate-900 text-white">
-            <h1 className="text-4xl font-bold">FastHistory</h1>
+            <h1 className="text-4xl font-bold"><Link href="/">FastHistory</Link></h1>
             <ul className="flex gap-16 text-lg">
                 <li className={active == "campeoes" ? classActive: ""}><Link href="/campeoes">Campeões</Link></li>
                 <li className={active == "partidas" ? classActive: ""}><Link href="/partidas">Partidas</Link></li>

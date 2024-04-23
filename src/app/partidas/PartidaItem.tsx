@@ -4,6 +4,8 @@ import {  Link } from "@nextui-org/react";
 // import deletePartida from "../actions/partidas/deletePartida";
 // import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import deletePartida from "../actions/partidas/deletePartida";
     
 type PartidaItemProps = {
     partida: Partida,
@@ -11,16 +13,16 @@ type PartidaItemProps = {
 
 
 export async function PartidaItem(props:PartidaItemProps) {
-//   const handleDelete = () =>{    
-//     toast.promise(
-//       deletePartida(partida.id),
-//        {
-//          loading: 'Apagando...',
-//          success: "Apagado com sucesso",
-//          error: "Erro ao apagar",
-//        }
-//      );
-//   }
+  const handleDelete = () =>{    
+    toast.promise(
+      deletePartida(partida.id),
+       {
+         loading: 'Apagando...',
+         success: "Apagado com sucesso",
+         error: "Erro ao apagar",
+       }
+     );
+  }
 
     const {partida} = props;
     const router = useRouter();
@@ -35,7 +37,7 @@ export async function PartidaItem(props:PartidaItemProps) {
               <span>Kills: {partida.kill}</span>            
               <span>Deaths: {partida.death}</span>         
               <span>Assists: {partida.assist}</span>    
-              <span>KDA: {partida.kda}</span>    
+              <span>KDA: {partida.kda.toPrecision(3)}</span>    
               <span>Resultado: {partida.resultado}</span>
             </div>   
          </div>
@@ -44,7 +46,7 @@ export async function PartidaItem(props:PartidaItemProps) {
                 <Pencil  onClick={() => router.push(`/partidas/${partida.id}`)} className="ml-2" color="white"/>
               </Link>
               <Link>
-                {/* <Trash2 onClick={() => handleDelete()} color="red"/>  */}
+                <Trash2 onClick={() => handleDelete()} color="red"/> 
               </Link>                        
             
           </div>
