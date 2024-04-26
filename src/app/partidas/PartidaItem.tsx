@@ -6,11 +6,12 @@ import {  Link } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import deletePartida from "../actions/partidas/deletePartida";
+
+import '@/app/partidas/style/styleCampeao.css'
     
 type PartidaItemProps = {
     partida: Partida,
 }
-
 
 export async function PartidaItem(props:PartidaItemProps) {
   const handleDelete = () =>{    
@@ -31,7 +32,7 @@ export async function PartidaItem(props:PartidaItemProps) {
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
             <div className="flex gap-2 items-center">
-              <span>Campeão: {partida.campeao.nome}</span>              
+              <span id="spanCampeao">Campeão: {partida.campeao.nome}</span>              
             </div>                                        
             <div className="flex gap-5">
               <span>Kills: {partida.kill}</span>            
