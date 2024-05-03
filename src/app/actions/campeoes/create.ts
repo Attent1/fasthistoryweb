@@ -1,4 +1,5 @@
 'use server'
+import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 const create = async (prevState: any, formData: FormData) =>{
@@ -19,6 +20,7 @@ const create = async (prevState: any, formData: FormData) =>{
     const resp = await fetch(process.env.API_BASE_URL + '/campeao',options);
 
     if(resp.ok){
+        revalidateTag("campeoes")
         redirect('/campeoes');
     }   
 

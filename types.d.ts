@@ -14,3 +14,9 @@ type Partida = {
     dataInclusao: string
     campeao: Campeao
 }
+interface Dashboard {
+    campeao: string,
+    kda:number,
+    win:number,
+    winRate:number,
+}

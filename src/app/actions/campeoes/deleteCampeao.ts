@@ -1,4 +1,5 @@
 'use server'
+import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 const deleteCampeao = async (idCampeao: number) =>{
@@ -8,6 +9,10 @@ const deleteCampeao = async (idCampeao: number) =>{
         method: 'DELETE'                
     }
     const resp = await fetch(`${process.env.API_BASE_URL}/campeao/${idCampeao}`,options);    
-    redirect('/campeoes');
+
+    if (resp.ok) {
+        revalidateTag("campeoes")
+        redirect('/campeoes');
+    }
 }
 export default deleteCampeao;

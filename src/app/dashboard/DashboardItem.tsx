@@ -1,6 +1,10 @@
 'use client'
 
-export async function DashboardItem() {
+type DashboardItemProps = {
+  dashboard: Dashboard
+}
+
+export async function DashboardItem(props: DashboardItemProps) {
     return(
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">                                                   
