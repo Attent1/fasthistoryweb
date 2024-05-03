@@ -32,14 +32,14 @@ export async function PartidaItem(props:PartidaItemProps) {
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
             <div className="flex gap-2 items-center">
-              <span id="spanCampeao">Campeão: {partida.campeao.nome}</span>              
+              <span className="min-w-[140px]">Campeão: {partida.campeao.nome}</span>              
             </div>                                        
             <div className="flex gap-5">
-              <span>Kills: {partida.kill}</span>            
-              <span>Deaths: {partida.death}</span>         
-              <span>Assists: {partida.assist}</span>    
-              <span>Inclusão: {partida.dataInclusao}</span>    
-              <span>Resultado: {partida.resultado}</span>
+              <span className="min-w-[60px]">Kills: {partida.kill}</span>            
+              <span className="min-w-[85px]">Deaths: {partida.death}</span>         
+              <span className="min-w-[90px]">Assists: {partida.assist}</span>    
+              <span className="min-w-[165px]">Inclusão: {partida.dataInclusao}</span>    
+              <span className="mr-1">Resultado: {partida.resultado}</span>
             </div>   
          </div>
             <div className="flex gap-4 items-center">

@@ -28,7 +28,7 @@ export function CampeaoItem(props:CampeaoItemProps) {
         <div className="flex justify-between p-2">
           <div className="flex items-center gap-5">
             <div className="flex gap-2 items-center">
-              <span>Rota: {campeao.rota}</span>              
+              <span className="min-w-[110px]">Rota: {campeao.rota}</span>              
             </div>                 
             <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full overflow-hidden">
@@ -36,8 +36,8 @@ export function CampeaoItem(props:CampeaoItemProps) {
             </div>
             </div>
             <div className="flex gap-5">
-              <span>Nome: {campeao.nome}</span>            
-              <span>Função: {campeao.funcao}</span>         
+              <span className="min-w-[160px]">Nome: {campeao.nome}</span>            
+              <span className="min-w-[150px]">Função: {campeao.funcao}</span>         
             </div>   
          </div>
             <div className="flex gap-4 items-center">
