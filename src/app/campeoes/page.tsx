@@ -5,15 +5,8 @@ import { Plus } from "lucide-react";
 import getCampeao from "../actions/campeoes/getCampeoes";
 import Link from "next/link";
 
-type Campeao = {
-  id: number,
-  rota:string,
-  nome:string,
-  funcao:string
-}
-
 export default async function Campeoes() {
-  
+  debugger;
   const campeoes: Campeao[] = await getCampeao();
   
   return (

@@ -17,6 +17,7 @@ export function DashboardItem(props: DashboardItemProps) {
               <span>KDA: {dashboard.kda.toPrecision(3)} </span>    
               <span>Win Rate: {dashboard.winRate}%</span>
               <span>Vitórias: {dashboard.win }</span>
+              <span>Derrotas: {dashboard.lose }</span>
               {/* <span>KDA: {partida.kda.toPrecision(3)}</span>  */}
             </div>   
          </div>          

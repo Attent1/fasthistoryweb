@@ -18,5 +18,6 @@ interface Dashboard {
     campeao: string,
     kda:number,
     win:number,
+    lose:number,
     winRate:number,
 }
